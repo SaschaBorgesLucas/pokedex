@@ -20,7 +20,7 @@ describe ('getPokemon()', () =>{
     expect(pokemon).toBeInstanceOf(PokemonListItem);
   });
 
-  test('2- getPokemon() retorna o pokemon nidorina de id:30',  async () =>{
+  test('2 - getPokemon() retorna o pokemon nidorina de id:30',  async () =>{
     const pokemon = await getPokemon(30);
     expect(pokemon.id).toBe(30);
     expect(pokemon.name).toBe('nidorina');
