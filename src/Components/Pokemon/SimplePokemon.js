@@ -1,4 +1,4 @@
-class PokemonListItem {
+class SimplePokemon {
     
     constructor() {
       this.id ='';
@@ -14,4 +14,4 @@ class PokemonListItem {
 
   }
   
-  export default PokemonListItem;
+  export default SimplePokemon;

@@ -1,5 +1,5 @@
-import getPokemon from './Components/Card/PokemonAPI';
-import PokemonListItem from './Components/Card/PokemonListItem';
+import getPokemon from './Components/Pokemon/PokemonAPI';
+import SimplePokemon from './Components/Pokemon/SimplePokemon'; 
 
 global.fetch = jest.fn(() =>
   Promise.resolve({
@@ -17,7 +17,7 @@ describe ('getPokemon()', () =>{
   
   test('1 - getPokemon() retorna um objeto da classe PokemonListItem', async () =>{
     const pokemon = await getPokemon(30);
-    expect(pokemon).toBeInstanceOf(PokemonListItem);
+    expect(pokemon).toBeInstanceOf(SimplePokemon);
   });
 
   test('2 - getPokemon() retorna o pokemon nidorina de id:30',  async () =>{

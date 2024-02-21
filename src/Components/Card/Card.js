@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import getPokemon from "./PokemonAPI";
+import {getPokemon} from "../Pokemon";
 
 const Card = (props) => {
   const [pokemon, setPokemon] = useState(null);
