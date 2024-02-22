@@ -1,2 +1,4 @@
-import ThemeToggler from "./ThemeToggler";
-export default ThemeToggler;
+import {ThemeTogglerProvider} from './ThemeTogglerProvider';
+import {ThemeTogglerButton} from './ThemeTogglerButton';
+
+export {ThemeTogglerProvider, ThemeTogglerButton};
