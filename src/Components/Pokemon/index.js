@@ -2,4 +2,6 @@ import SimplePokemon from './SimplePokemon';
 import getPokemon from './PokemonAPI';
 import PokemonContext from './PokemonContext';
 
-export { SimplePokemon, getPokemon, PokemonContext};
+import { Pokemon } from './Pokemon';
+
+export { SimplePokemon, getPokemon, PokemonContext, Pokemon};
