@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-export const AddPokemonsButton = () =>{
+export const AddPokemonsButton = ({label, onClick}) =>{
     return(
-        <Div>Add pokemon</Div>
+        <Div onClick={onClick}>{label}</Div>
     );
 }
 
