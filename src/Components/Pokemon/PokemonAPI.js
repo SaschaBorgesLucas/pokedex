@@ -1,4 +1,5 @@
 import { SimplePokemon } from "./"
+import { PokemonComplet } from "./";
 
 async function getPokemon(pokemonID){
   try 
@@ -7,9 +8,34 @@ async function getPokemon(pokemonID){
     const data = await apiResponse.json();
     const pokemonInstance = new SimplePokemon();
     pokemonInstance.setInfo(data);
-    console.log(pokemonInstance);
     return pokemonInstance;
   }    
+  catch (error) 
+  {
+    throw error;
+  }
+}
+
+async function getPokemonComplet(pokemonID){
+  try{
+    const apiResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonID}`);
+    const data = await apiResponse.json();
+    
+    const pokemonAbilities = await Promise.all(data.abilities.map(async (ability) => {
+      const response = await fetch(ability.ability.url);
+      const abilityData = await response.json();
+      return {
+        name: abilityData.name,
+        description: abilityData.effect_entries.find(entry => entry.language.name === 'en').effect
+      };
+    }));
+
+    const pokemonInstance = new PokemonComplet();
+    pokemonInstance.setInfo(data);
+    pokemonInstance.abilities = pokemonAbilities;
+    
+    return pokemonInstance;
+  }
   catch (error) 
   {
     throw error;
@@ -27,4 +53,4 @@ async function getMaxpokemonCount (){
   }
 }
 
-export { getPokemon , getMaxpokemonCount }
+export { getPokemon, getPokemonComplet, getMaxpokemonCount }

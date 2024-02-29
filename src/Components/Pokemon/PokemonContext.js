@@ -2,6 +2,7 @@ import { getPokemon } from "./";
 import { createContext, useState, useEffect } from "react";
 
 export const PokemonContext = createContext({})
+
 export const PokemonProvider=(props)=>{
     const [pokemons, setPokemons] = useState([]);
     useEffect(() => {const fetchData = async () => {

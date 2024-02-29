@@ -1,7 +1,7 @@
 import SimplePokemon from './SimplePokemon';
-import { getPokemon , getMaxpokemonCount} from './PokemonAPI';
+import { PokemonComplet } from './PokemonComplet';
+import { getPokemon , getPokemonComplet, getMaxpokemonCount} from './PokemonAPI';
 import PokemonContext from './PokemonContext';
-
 import { Pokemon } from './Pokemon';
 
-export { SimplePokemon, getPokemon, getMaxpokemonCount, PokemonContext, Pokemon};
+export { SimplePokemon, PokemonComplet, getPokemonComplet, getPokemon, getMaxpokemonCount, PokemonContext, Pokemon};

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {getPokemon} from "../Pokemon";
+import { getPokemonComplet } from "../Pokemon";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -10,7 +10,7 @@ const Pokemon = () =>{
     useEffect(() => {
       const fetchData = async () => {
         try {
-          const monster = await getPokemon(id);
+          const monster = await getPokemonComplet(id);
           setPokemon(monster);
           
         } 
@@ -20,8 +20,8 @@ const Pokemon = () =>{
       };
       fetchData();
     }, [id]);
-
     
+    console.log(pokemon)
   
     return (
       <>
@@ -31,8 +31,17 @@ const Pokemon = () =>{
           <li>
             <p>ID: {pokemon.id}</p>
             <p>Name: {pokemon.name}</p>
-            <p><img src={pokemon.sprite} alt="sprite"/></p>
-            <p></p>
+            <p><img src={pokemon.sprite} alt="sprite"/> </p>
+            <p><strong> types: </strong> {pokemon.types} </p>
+            <p><strong> Abilities: </strong></p>
+            <ul>
+              {pokemon.abilities && pokemon.abilities.map((ability, index) => (
+              <li key={index}>
+                <strong>Name:</strong> {ability.name}<br />
+                <strong>Description:</strong> {ability.description}
+             </li> ))}
+            </ul>
+            <p><strong> Moves: </strong> {pokemon.moves} </p>
             <Link to='/'> voltar </Link>
           </li>
           </>

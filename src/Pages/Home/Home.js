@@ -26,7 +26,6 @@ const Home = () => {
   async function UseMaxPokemonId() {
     try {
       const teste = await fillhMaxPokemonId();
-      console.log(teste);
       setMaxPokemonCount(teste);
     } catch (error) {
       console.error('Erro ao obter o número máximo de Pokémon:', error);
