@@ -1,31 +1,32 @@
+import styled from 'styled-components';
 import React, { useEffect, useState } from "react";
-import { getPokemonComplet } from "../Pokemon";
+import { getPokemonComplet } from '../Pokemon/PokemonAPI';
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 
-const Pokemon = () =>{
+
+const PokemonProfile = () =>{
     const { id } = useParams();
     const [pokemon, setPokemon] = useState({});
-    
+
     useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const monster = await getPokemonComplet(id);
-          setPokemon(monster);
-          
-        } 
-        catch (error){
-          console.error('Erro ao obter dados do Pokémon');
-        }
-      };
-      fetchData();
-    }, [id]);
-    
-    console.log(pokemon)
-  
-    return (
-      <>
-         {pokemon && (
+        const fetchData = async () => {
+          try {
+            const monster = await getPokemonComplet(id);
+            setPokemon(monster);
+          } 
+          catch (error){
+            console.error('Erro ao obter dados do Pokémon');
+          }
+        };
+        fetchData();
+      }, [id]);
+
+
+
+    return(
+    <Div>
+        {pokemon && (
           <>
           <h1>{pokemon.name}</h1>
           <li>
@@ -46,9 +47,12 @@ const Pokemon = () =>{
           </li>
           </>
         )}
-      </>
+    </Div>
     );
-
 }
 
-export {Pokemon}
+const Div = styled.div`
+    background-color:red;
+`
+
+export {PokemonProfile}

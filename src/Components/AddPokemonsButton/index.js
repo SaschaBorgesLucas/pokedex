@@ -1,2 +1,2 @@
-import AddPokemonsButton from "./AddPokemonsButton";
-export default AddPokemonsButton;
+import  { AddPokemonsButton } from './AddPokemonsButton';
+export  { AddPokemonsButton };

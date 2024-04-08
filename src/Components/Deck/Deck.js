@@ -22,11 +22,9 @@ const Deck = () =>{
 }
 
 const Ul = styled.ul`
-    padding:30px, 30px;
     display: flex;
     flex-wrap: wrap;
-    background-color: yellow;
-    align-content: space-arrond;
+    justify-content: center;
 `
 
 export default Deck;

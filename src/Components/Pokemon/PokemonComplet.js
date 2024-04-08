@@ -9,7 +9,6 @@ class PokemonComplet extends SimplePokemon{
       }
       setInfo(pokemon) {
         super.setInfo(pokemon);
-       
         this.setTypes(pokemon.types);
         this.setAbilities(pokemon.abilities);
         this.setMoves(pokemon.moves);
