@@ -45,16 +45,16 @@ Foram apresentados os seguintes requisitos para o sistema:
 <h2> Instalação </h2>
 Para instalar a <b>Pokedex</b> pode ser feito em passos simples:<br>
 <b>Preparação:</b> certifiquese de ter os seguintes programas instalados em seu computador: zip ou winrar; vs code (você pode usar outros editores de código, ou até mesmo nenhum, mas as instruções aqui vão ser dadas no vs code), e o node js.<br>
-Além disso é necessário conexão com a internet;
+Além disso, é necessário conexão com a internet;<br>
 <b>Beixe a aplicação:</b> entre no repositório do github, clique em code e em seguida download zip;<br>
 <b>Extraia a aplicação:</b> localize o arquivo que você baixou e extrai para uma pasta de sua preferência;<br>
 <b>Instalação:</b> clique com o botão direito sobre a página e escolha a opção abrir com code;<br>
 <b>digite o comando <i>npm install</i></b>. Ele vai baixar os arquivos necessários para rodar a aplicação, esta etapa pode demorar um pouco;<br>
 <b>Executar:</b> digite o comando <i>npm start</i> se tudo deu certo em poucos instantes você deve ter a Pokedex rodando em seu servidor local;<br>
 </hr>
+<h2>Uso</h2>
 
 
-## Uso
 
 
 ## desenvolvimento
