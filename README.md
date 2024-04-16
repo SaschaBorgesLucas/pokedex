@@ -1,33 +1,60 @@
-# Getting Started with Create React App
+<h1>Pokedex</h1>
+Pokedex, é uma aplicação (APP) com o objetivo de listar as criaturas da série de jogos pokemon, obtendo estes dados atráves da pokeAPI (https://pokeapi.co/).
+<hr>
+<h3>Requisitos</h3>
+Foram apresentados os seguintes requisitos para o sistema: 
+<ol>
+  <li>
+    <b>Criar uma Home (página inicial) de listagem de alguns pokemons,utilizando a api https://pokeapi.co/</b>
+    <ul>
+      <li>A home deve apresentar uma listagem com 10 pokemonsiniciais</li>
+      <li>Essa listagem deve mostrar a imagem e nome de cada pokemon.</li>
+      <li>
+        Essa listagem deve mostrar a imagem e nome de cada pokemon. Na listagem cada pokemon deve ser clicável e ao clicar o usuáriodeve poder acessar 
+        uma página interna desse pokemon com informações detalhadas (veja requisito 2)
+      </li>
+      <li>Essa home deve ter um botão para que o usuário possaalternar de cor entre tema claro e tema escuro (light/dark)</li>
+    </ul>
+    
+  </li>
+  <li>
+    <b>Criar uma página interna com detalhes do pokemon, conforme requisitos abaixo</b>
+    <ul>
+      <li> Imagem do pokemon </li>
+      <li> Nome </li>
+      <li> Lista de movimentos do pokemon (moves)</li>
+      <li> 
+        Lista de habilidades do pokemon (abilities)
+        <ul><li>a lista de habilidades deve apresentar o nome e o textodescritivo da habilidade</li></ul>
+      </li>
+      <li>Tipo do pokemon (type)</li>
+    </ul>
+  </li>
+  <li>
+    <b>Requisitos técnicos</b>
+    <ul>
+      <li>A aplicação deverá ser Single Page Application (SPA);</li>
+      <li>Utilizar React.js para o desenvolvimento daaplicação;</li>
+      <li>Utilizar Context API para criação do Theme Toggler(Alternador entre tema claro e escuro);</li>
+      <li>Utilizar styled-components para estilização doscomponentes;</li>
+      <li>Utilizar react-router-dom para a navegação entre aspáginas;</li>
+    </ul>
+  </li>
+</ol>
+<hr>
+<h2> Instalação </h2>
+Para instalar a <b>Pokedex</b> pode ser feito em passos simples
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
 
 In the project directory, you can run:
 
-### `npm start`
+## Uso
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## desenvolvimento
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `npm run eject`
 
