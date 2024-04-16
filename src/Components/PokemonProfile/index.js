@@ -1,2 +1,2 @@
 import { PokemonProfile } from "./PokemonProfile"
-export {PokemonProfile}
+export { PokemonProfile }

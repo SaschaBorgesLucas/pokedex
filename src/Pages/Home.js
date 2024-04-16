@@ -1,17 +1,18 @@
-import Deck from '../../Components/Deck';
-import { PokemonProvider } from '../../Components/Pokemon/PokemonContext';
-import { getMaxpokemonCount } from '../../Components/Pokemon';
+import { Deck } from '../Components/Deck';
+import { PokemonProvider } from '../Providers';
+import { getMaxpokemonCount } from '../Components/Pokemon';
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { PokemonListControls } from '../../Components/PokemonListControls';
-import { ThemeContext } from '../../Components/ThemeToggler/ThemeTogglerProvider';
+import { ListControls } from '../Components/ListControls';
+import { ThemeContext } from '../Providers';
 import React, { useContext } from 'react';
 
 const Home = () => {
   const { theme } = useContext(ThemeContext);
   const firstPokemonList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const [maxPokemonCount, setMaxPokemonCount] = useState(0);
-  const [pokemonLenght, setPokemonLengh] = useState(10);
+  const [pokemonLenght, setPokemonLengh] = useState(5);
+  
   const [pokemonList, setPokemonList] = useState(() => {
     const storedList = localStorage.getItem('pokemonList');
     return storedList ? JSON.parse(storedList) : firstPokemonList;
@@ -26,6 +27,7 @@ const Home = () => {
       return -1;
     }
   }
+
   async function UseMaxPokemonId() {
     try {
       const teste = await fillhMaxPokemonId();
@@ -34,6 +36,7 @@ const Home = () => {
       console.error('Erro ao obter o número máximo de Pokémon:', error);
     }
   }
+  
   UseMaxPokemonId();
 
   useEffect(() => {
@@ -43,8 +46,8 @@ const Home = () => {
   function addPokemonToList (){
     if (maxPokemonCount-pokemonList.length <= 0){
       return;
-    } if ( maxPokemonCount - pokemonList.length - 10  <=  10){
-      setPokemonLengh(maxPokemonCount - pokemonList.length - 10);
+    } if ( maxPokemonCount - pokemonList.length - 5  <=  5){
+      setPokemonLengh(maxPokemonCount - pokemonList.length - 5);
       const nextList = Array.from({ length: pokemonLenght }, (_, index) => pokemonList.length + index + 1);
       setPokemonList(prevList=>[...prevList, ...nextList]);
     }
@@ -55,7 +58,7 @@ const Home = () => {
   }
   
   function resetPokemonList() {
-    setPokemonLengh(10);
+    setPokemonLengh(5);
     setPokemonList(firstPokemonList);
   }
   
@@ -72,7 +75,7 @@ const Home = () => {
           </Content>
 
           <Sides MainColor={theme.MainColor}>
-            <PokemonListControls 
+            <ListControls
               maxPokemonCount= { maxPokemonCount } 
               currentPokemonCont= { pokemonList.length } 
               add5ItensToList= { addPokemonToList }
@@ -109,4 +112,4 @@ const Sides = styled.div`
 `
 
 
-export default Home;
+export { Home };

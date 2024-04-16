@@ -4,14 +4,14 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './Styles/Reset.css';
-import {ThemeTogglerProvider} from './Components/ThemeToggler';
+import {ThemeProvider} from './Providers';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <ThemeTogglerProvider>
+    <ThemeProvider>
     <App />
-    </ThemeTogglerProvider>
+    </ThemeProvider>
    
   </React.StrictMode>
 );

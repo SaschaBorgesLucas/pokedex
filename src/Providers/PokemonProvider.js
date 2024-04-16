@@ -1,9 +1,9 @@
-import { getPokemon } from "./";
+import { getPokemon } from "../Components/Pokemon";
 import { createContext, useState, useEffect } from "react";
 
-export const PokemonContext = createContext({})
+const PokemonContext = createContext( { } )
 
-export const PokemonProvider=(props)=>{
+const PokemonProvider=(props)=>{
     const [pokemons, setPokemons] = useState([]);
     useEffect(() => {const fetchData = async () => {
         try {
@@ -28,4 +28,4 @@ export const PokemonProvider=(props)=>{
     );
 }
 
-export default PokemonContext;
+export { PokemonContext, PokemonProvider };

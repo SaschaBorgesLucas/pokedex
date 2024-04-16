@@ -1,2 +1,2 @@
-import ResetButton from "./ResetButton";
-export {ResetButton};
+import { ResetButton } from "./ResetButton";
+export { ResetButton };

@@ -1,6 +1,6 @@
 import { useContext } from 'react';
-import { PokemonContext } from '../Pokemon';
-import Card from '../Card'
+import { PokemonContext } from '../../Providers';
+import { Card } from '../Card';
 import styled from 'styled-components';
 
 const Deck = () =>{
@@ -27,4 +27,4 @@ const Ul = styled.ul`
     justify-content: center;
 `
 
-export default Deck;
+export { Deck };

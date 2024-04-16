@@ -1,4 +1,3 @@
-import {ThemeTogglerProvider} from './ThemeTogglerProvider';
-import {ThemeTogglerButton} from './ThemeTogglerButton';
+import { ThemeToggler } from './ThemeToggler';
 
-export {ThemeTogglerProvider, ThemeTogglerButton};
+export { ThemeToggler };

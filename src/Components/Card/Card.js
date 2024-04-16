@@ -1,8 +1,8 @@
 import React, { useEffect, useState, useContext } from "react";
-import {getPokemon} from "../Pokemon";
+import { getPokemon } from "../Pokemon";
 import { Link } from "react-router-dom";
 import styled from 'styled-components';
-import { ThemeContext }from '../ThemeToggler/ThemeTogglerProvider';
+import { ThemeContext } from '../../Providers';
 
 const Card = (props) => {
   const [pokemon, setPokemon] = useState(null);
@@ -25,7 +25,7 @@ const Card = (props) => {
     <>
        {pokemon && (
         <>
-        <Div MainColor={theme.MainColor} MidColor={theme.MidColor} BotColor={theme.BotColor}>
+        <Div MainColor={theme.MainColor} MidColor={theme.MidColor} BotColor={theme.BotColor} HoverColor={theme.HoverColor}>
           <Link to= {`pokemon/${pokemon.id}`}>
               <Li BotColor={theme.BotColor}>
                 <p>{pokemon.name}</p>
@@ -58,9 +58,10 @@ const Div = styled.div`
   background: ${(props) => props.MainColor};
   box-shadow: inset 7px 7px 35px ${(props) => props.MidColor},
               inset -7px -7px 35px ${(props) => props.BotColorColor};
+  user-select:none;
   &:hover{
-    box-shadow: inset 7px 7px 35px #036EE1,
+    box-shadow: inset 7px 7px 35px ${(props) => props.HoverColor},
     inset -7px -7px 35px ${(props) => props.MainColor};
   }
 `
-export default Card;
+export { Card };

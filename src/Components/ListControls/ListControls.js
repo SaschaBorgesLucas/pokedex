@@ -1,17 +1,17 @@
 import styled from "styled-components";
-import AddPokemonsButton from '../AddPokemonsButton/AddPokemonsButton';
+import { AddPokemons } from '../AddPokemons';
 import { ResetButton } from "../ResetButton";
-import {ThemeTogglerButton} from "../ThemeToggler";
-import { ThemeContext } from '../../Components/ThemeToggler/ThemeTogglerProvider';
+import { ThemeToggler } from "../ThemeToggler";
+import { ThemeContext } from '../../Providers';
 import React, { useContext } from 'react';
 
-const PokemonListControls = ({maxPokemonCount, currentPokemonCont, add5ItensToList, reset, isItVisible}) =>{
+const ListControls = ({maxPokemonCount, currentPokemonCont, add5ItensToList, reset}) =>{
   const { theme } = useContext(ThemeContext);
       return(
        <>
-            <Toggler><ThemeTogglerButton/></Toggler>
+            <Toggler><ThemeToggler/></Toggler>
             
-            <AddPokemonsButton onClick={ add5ItensToList }/>
+            <AddPokemons onClick={ add5ItensToList }/>
             <Div MainColor={theme.MainColor} MidColor={theme.MidColor} BotColor={theme.BotColor}>
                 { maxPokemonCount } / { currentPokemonCont }
             </Div>
@@ -21,8 +21,6 @@ const PokemonListControls = ({maxPokemonCount, currentPokemonCont, add5ItensToLi
   
     );
 }
-
-export {PokemonListControls}
 
 const Div = styled.div`
   color: ${(props) => props.BotColor};
@@ -47,4 +45,4 @@ const Toggler = styled.div`
   height:20px;
 `
 
-export default PokemonListControls;
+export { ListControls }

@@ -2,7 +2,7 @@ import PokemonRouters from './Pages/PokemonRoutes';
 import { Header } from './Components/Header';
 import { Footer } from './Components/Footer';
 import React, { useContext } from 'react';
-import { ThemeContext } from './Components/ThemeToggler/ThemeTogglerProvider';
+import { ThemeContext } from './Providers';
 import styled from 'styled-components';
 
 function App(props) {

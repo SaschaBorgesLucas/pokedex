@@ -1,26 +1,30 @@
 import { createContext, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faMoon} from '@fortawesome/free-solid-svg-icons';
-import {faSun} from '@fortawesome/free-solid-svg-icons';
+import { faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faSun } from '@fortawesome/free-solid-svg-icons';
 
-export const Themes ={
+const Themes ={
     dark:{
         MainColor:'#07203B',
         MidColor:'#c9c9c9',
         BotColor: '#ffffff',
+        HoverColor:'#036EE1',
         icon: <FontAwesomeIcon icon={faMoon} />
     },
+
     light:{
         MainColor:'#ffffff',
         MidColor:'#c9c9c9',
         BotColor: '#07203B',
+        HoverColor:'#036EE1',
         icon:<FontAwesomeIcon icon={faSun} />
     }
+    
 }
 
-export const ThemeContext = createContext({});
+const ThemeContext = createContext({});
 
-export const ThemeTogglerProvider = (props) => {
+const ThemeProvider = (props) => {
     const [theme, setTheme] = useState(Themes.light)
     return(
             <ThemeContext.Provider value={{theme, setTheme}}>
@@ -29,5 +33,5 @@ export const ThemeTogglerProvider = (props) => {
     )
 }
 
-export default ThemeTogglerProvider
+export {ThemeProvider, ThemeContext, Themes}
 
